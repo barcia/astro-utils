@@ -1,0 +1,46 @@
+---
+import "lite-youtube-embed/src/lite-yt-embed.css";
+import { getIdByUrl, buildYouTubeParams } from "./utils";
+import {
+	ComponentProps,
+	ComponentConfig,
+	YouTubeCoverResolution,
+} from "./types";
+
+type Props = ComponentProps;
+
+let { title, borderRadius = true, id, url, ...ytpParams } = Astro.props;
+if (url && !id) id = getIdByUrl(url);
+const params = buildYouTubeParams(ytpParams);
+
+const config: ComponentConfig = {
+	borderRadiusSize: borderRadius ? "12px" : "0px",
+	coverResolution: YouTubeCoverResolution.MAXRESDEFAULT,
+};
+---
+
+<lite-youtube
+	videoid={id}
+	style={`background-image: url('https://i.ytimg.com/vi/${id}/${config.coverResolution}')`}
+	title={title}
+	params={params}
+>
+	<a
+		href={`https://youtube.com/watch?v=${id}`}
+		class="lty-playbtn"
+		title="Play Video"
+	>
+		<span class="lyt-visually-hidden">Play Video: {title}</span>
+	</a>
+</lite-youtube>
+
+<script src="lite-youtube-embed"></script>
+
+<style define:vars={{ borderRadius: config.borderRadiusSize }}>
+	lite-youtube {
+		width: 100%;
+		max-width: none;
+		aspect-ratio: 16/9;
+		border-radius: var(--borderRadius);
+	}
+</style>

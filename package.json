@@ -1,0 +1,7 @@
+{
+	"name": "@barcia/astro-utils",
+	"workspaces": [
+		"docs",
+		"packages/components/*"
+	]
+}

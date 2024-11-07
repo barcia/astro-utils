@@ -1,0 +1,18 @@
+{
+  "name": "@barcia/astro-youtube",
+  "description": "Astro component for embedding YouTube videos",
+  "version": "1.0.0-beta.1",
+  "type": "module",
+  "exports": {
+    ".": "./YouTube.astro"
+  },
+  "files": [
+    "YouTube.astro"
+  ],
+  "keywords": [],
+  "author": "Iván Barcia",
+  "license": "MIT",
+  "dependencies": {
+    "lite-youtube-embed": "^0.3.3"
+  }
+}
