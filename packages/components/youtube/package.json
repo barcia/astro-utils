@@ -1,7 +1,7 @@
 {
   "name": "@barcia/astro-youtube",
   "description": "Astro component for embedding YouTube videos",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "type": "module",
   "exports": {
     ".": "./YouTube.astro"
@@ -11,10 +11,23 @@
     "utils.ts",
     "YouTube.astro"
   ],
-  "keywords": [],
+  "keywords": [
+    "astro",
+    "youtube",
+    "component",
+    "embed",
+    "lite-youtube-embed",
+    "lite-youtube",
+    "astro-component"
+  ],
   "author": "Iván Barcia",
   "license": "MIT",
   "dependencies": {
     "lite-youtube-embed": "^0.3.3"
+  },
+  "homepage": "https://github.com/barcia/astro-utils",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/barcia/astro-utils.git"
   }
 }
